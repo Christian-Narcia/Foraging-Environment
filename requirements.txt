@@ -1,0 +1,17 @@
+# Pinned versions the environment is tested with (Python 3.11). Install with
+#   pip install -r requirements.txt
+#   pip install -e .
+# pyproject.toml lists the looser bounds the package itself needs (mujoco>=3.2, numpy>=1.24).
+
+# environment; mujoco brings glfw and PyOpenGL (EGL / OSMesa bindings for headless rendering)
+mujoco==3.17.0
+numpy==2.4.6
+
+# visualisation: GIFs (examples/random_agents.py --gif, scripts/preview_env.py) and MP4 videos
+# (scripts/render_video.py)
+pillow==13.0.0
+imageio==2.38.1
+imageio-ffmpeg==0.6.0
+
+# tests
+pytest==9.1.1

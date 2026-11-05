@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# MuJoCo writes warnings here
+MUJOCO_LOG.TXT
+
+# Outputs of the example and scripts (GIFs, videos, benchmark results); README figures live in docs/media/
+runs/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store

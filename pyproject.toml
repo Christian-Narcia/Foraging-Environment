@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "foraging-env"
+dynamic = ["version"]
+description = "Multi-robot visual foraging in MuJoCo: egocentric 64x64 RGB, occlusion, distractors and ground-truth belief labels"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mujoco>=3.2",
+    "numpy>=1.24",
+]
+keywords = ["reinforcement learning", "multi-agent", "MuJoCo", "partial observability", "foraging", "robotics"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: POSIX :: Linux",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+viz = ["pillow>=10.1", "imageio>=2.31", "imageio-ffmpeg>=0.4.9"]   # GIFs, preview figures, MP4 videos
+dev = ["pytest>=7"]
+
+[tool.setuptools.dynamic]
+version = { attr = "foraging_env.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["foraging_env*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
